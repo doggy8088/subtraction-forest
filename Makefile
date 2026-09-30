@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help install dev build preview test test-watch typecheck format format-check check-site check clean
+.PHONY: help install dev build preview test test-watch typecheck format format-check check-site check lighthouse clean
 
 help: ## 顯示常用指令
 	@printf '暖暖森林開發指令\n\n'
@@ -40,6 +40,12 @@ check-site: build ## 建置並驗證 SEO、圖示與靜態資源
 	bun run check:site
 
 check: format-check test check-site ## 執行格式、測試、型別、建置與網站檢查
+
+lighthouse: URL ?= https://subtraction-forest.gh.miniasp.com/
+lighthouse: ## 測量正式站手機與桌面 Lighthouse，輸出 HTML 與 JSON 報告
+	mkdir -p artifacts/lighthouse
+	bunx lighthouse@13.5.0 "$(URL)" --chrome-flags='--headless' --output=json --output=html --output-path=artifacts/lighthouse/mobile --quiet
+	bunx lighthouse@13.5.0 "$(URL)" --preset=desktop --chrome-flags='--headless' --output=json --output=html --output-path=artifacts/lighthouse/desktop --quiet
 
 clean: ## 移除產生的 dist/ 目錄
 	rm -rf dist

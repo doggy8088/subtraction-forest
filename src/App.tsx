@@ -33,6 +33,7 @@ import {
   unitNames,
 } from './game/logic';
 import type { Blocks, Place } from './game/logic';
+import type { Progress } from './game/storage';
 import { readProgress, saveProgress } from './game/storage';
 import { playSound } from './game/sound';
 import FoxFace from './components/FoxFace';
@@ -46,7 +47,13 @@ const moods = [
 ];
 
 export default function App() {
-  const [progress, setProgress] = useState(readProgress);
+  // The first browser render must match the build-time HTML. Restore saved
+  // progress after hydration, and never overwrite it with the initial state.
+  const [progress, setProgress] = useState<Progress>({
+    completed: [],
+    sound: false,
+  });
+  const [progressLoaded, setProgressLoaded] = useState(false);
   const [page, setPage] = useState<'home' | 'game' | 'finish'>('home');
   const [chapter, setChapter] = useState(0);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -73,8 +80,12 @@ export default function App() {
   );
 
   useEffect(() => {
-    setStorageNotice(!saveProgress(progress));
-  }, [progress]);
+    setProgress(readProgress());
+    setProgressLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (progressLoaded) setStorageNotice(!saveProgress(progress));
+  }, [progress, progressLoaded]);
   useEffect(() => {
     if (modal) dialog.current?.showModal();
     else dialog.current?.close();

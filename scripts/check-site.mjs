@@ -19,7 +19,16 @@ const links = [...html.matchAll(/<link\b[^>]*>/g)].map((m) => attrs(m[0]));
 assert.equal(links.filter((l) => l.rel === 'canonical').length, 1);
 assert.equal(links.find((l) => l.rel === 'canonical').href, `${origin}/`);
 assert.match(html, /lang="zh-Hant"/);
-assert.match(html, /<h1>暖暖森林/);
+assert.equal([...html.matchAll(/<h1[ >]/g)].length, 1);
+assert.match(html, /data-prerendered="true"/);
+assert.match(html, /每一次嘗試/);
+for (const chapter of ['暖陽小徑', '蘑菇森林', '星光溪谷', '雲朵樹屋'])
+  assert.ok(html.includes(chapter), `Missing prerendered chapter: ${chapter}`);
+assert.doesNotMatch(
+  html,
+  /<!--\$!-->|<template/,
+  'Suspense must resolve at build time',
+);
 assert.match(html, /© 2026/);
 for (const name of [
   'description',

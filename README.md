@@ -59,11 +59,14 @@ make format-check # 檢查格式，不修改檔案
 make build        # 型別檢查並建置到 dist/
 make check-site   # 建置後檢查 SEO、圖示與靜態資源
 make check        # 執行與 CI 相同的格式、測試、型別、建置與網站檢查
+make lighthouse   # 測量正式站手機與桌面 Lighthouse（需要 Chrome）
 make preview      # 建置後預覽正式版本，預設連接埠 4173
 make clean        # 移除 dist/
 ```
 
 自訂連接埠：`make dev PORT=5176` 或 `make preview PORT=4176`。`make check` 會先完成建置，再檢查產出的靜態網站；也支援 `make -j4 check`。請先執行 `make install` 安裝依賴。
+
+`make lighthouse` 固定使用 Lighthouse 13.5.0，依序執行預設手機測試與桌面測試，將 HTML 與 JSON 報告寫入 `artifacts/lighthouse/`（不納入版控）。可用 `make lighthouse URL=https://example.com/` 更換受測網址。效能目標為 100 分；請以正式站的壓縮傳輸條件驗收，本機預覽的未壓縮資源會影響模擬網速下的分數。
 
 沒有安裝 Make 時，可直接使用 Bun 指令：
 
@@ -101,7 +104,9 @@ Makefile                    常用開發、測試與檢查指令
 
 ## SEO 與靜態發佈
 
-- HTML 直接包含教學介紹，JavaScript 載入後切換成互動遊戲。
+- 建置時由 React 預先產生完整首頁 HTML；瀏覽器直接顯示首頁，再透過 hydration 接上互動，避免替換不同版面造成位移。
+- 單頁共用的精簡 CSS 直接放入 HTML，省去阻塞首次顯示的額外請求。3D 程式仍獨立分包，場景只在內容或視角改變時重繪。
+- 紀念冊在 hydration 後還原，再允許寫回儲存，避免覆蓋既有進度。
 - canonical、OpenGraph、Twitter Card、JSON-LD、robots.txt 與 sitemap.xml 統一使用正式網域。
 - 分享卡為 1200 × 630 PNG；提供 SVG、ICO、PNG favicon、Apple 圖示與安裝 manifest。
 - `design/social-card.html` 可透過 Bun 開發伺服器開啟，以 1200 × 630 瀏覽器視窗重新輸出分享卡；`design/icon.html` 提供圖示來源。
