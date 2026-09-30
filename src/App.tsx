@@ -80,7 +80,10 @@ export default function App() {
     else dialog.current?.close();
   }, [modal]);
   useEffect(() => {
-    document.title = `${page === 'game' ? current.name : page === 'finish' ? '謝謝你，小小冒險家' : '暖暖森林'}｜三位數減法冒險`;
+    document.title =
+      page === 'home'
+        ? '暖暖森林｜國小三年級 3D 三位數減法教學遊戲'
+        : `${page === 'game' ? current.name : '謝謝你，小小冒險家'}｜暖暖森林三位數減法冒險`;
     if (page !== 'home') heading.current?.focus();
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [page, chapter, questionIndex, current.name]);
@@ -184,6 +187,7 @@ export default function App() {
         <nav className="header-actions" aria-label="主要功能">
           <button
             className="collection-button"
+            aria-label={`我的紀念冊，已收集 ${progress.completed.length} 份心意`}
             onClick={() => setModal('collection')}
           >
             <Leaf size={19} />

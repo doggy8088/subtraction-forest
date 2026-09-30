@@ -123,7 +123,7 @@ svg {
   font-size: 0.62rem;
   letter-spacing: 0.17em;
   font-weight: 500;
-  color: #6f7c68;
+  color: #5d6b50;
   margin-top: 0;
 }
 .header-actions {
@@ -261,7 +261,7 @@ svg {
   align-items: center;
   margin-top: 20px;
   font-size: 0.72rem;
-  color: #77836b;
+  color: #5d6b50;
 }
 .hero-reassurance svg {
   color: #aaad84;
@@ -314,7 +314,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #7b895e;
+  color: #5d6b50;
   font-size: 0.7rem;
   transform: rotate(-5deg);
 }
@@ -327,7 +327,7 @@ svg {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #7c886e;
+  color: #5d6b50;
   white-space: nowrap;
 }
 .world-cloud {
@@ -395,7 +395,7 @@ svg {
 }
 .mood-intro p {
   font-size: 0.74rem;
-  color: #68755e;
+  color: #5d6b50;
   line-height: 1.8;
 }
 .mood-options {
@@ -406,7 +406,7 @@ svg {
 }
 .mood-options > span {
   font-size: 0.63rem;
-  color: #68755e;
+  color: #5d6b50;
 }
 .mood-options > div {
   display: flex;
@@ -515,7 +515,7 @@ svg {
   font-size: 0.57rem;
   letter-spacing: 0.18em;
   margin-bottom: 6px;
-  color: #839075;
+  color: #5d6b50;
 }
 .section-title h2 {
   font-size: 1.35rem;
@@ -523,7 +523,7 @@ svg {
 }
 .section-title > p {
   font-size: 0.71rem;
-  color: #78836e;
+  color: #5d6b50;
   padding-bottom: 4px;
 }
 .chapter-grid {
@@ -567,11 +567,11 @@ svg {
 .chapter-number {
   font-size: 0.74rem;
   letter-spacing: 0.08em;
-  color: #788465;
+  color: #5d6b50;
 }
 .chapter-state {
   font-size: 0.59rem;
-  color: #657454;
+  color: #5d6b50;
   display: flex;
   align-items: center;
   gap: 3px;
@@ -624,7 +624,7 @@ svg {
 }
 .chapter-card p {
   font-size: 0.68rem;
-  color: #737c69;
+  color: #5d6b50;
 }
 .chapter-card p span {
   font-size: 0.59rem;
@@ -645,7 +645,7 @@ svg {
   display: flex;
   justify-content: space-between;
   padding: 26px 0 24px;
-  color: #7d8973;
+  color: #5d6b50;
   font-size: 0.64rem;
 }
 .home-footer span {
@@ -691,7 +691,7 @@ svg {
   opacity: 0.4;
 }
 .game-navigation > span {
-  color: #76806b;
+  color: #5d6b50;
 }
 .game-navigation i {
   font-style: normal;
@@ -710,7 +710,7 @@ svg {
   height: 27px;
   border-radius: 50%;
   background: #e8eddc;
-  color: #70805e;
+  color: #5d6b50;
   font-size: 0.65rem;
 }
 .task-progress > span.active {
@@ -742,13 +742,13 @@ svg {
   display: flex;
   align-items: center;
   gap: 7px;
-  color: #7a8668;
+  color: #5d6b50;
   font-size: 0.71rem;
 }
 .story {
   margin-top: 13px;
   margin-bottom: 24px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #65715c;
   line-height: 1.9;
 }
@@ -775,7 +775,7 @@ svg {
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 .workbench-header > span {
@@ -799,8 +799,8 @@ svg {
   width: 100%;
   text-align: center;
   left: 0;
-  font-size: 0.6rem;
-  color: #7b866f;
+  font-size: 0.67rem;
+  color: #5d6b50;
   pointer-events: none;
   z-index: 2;
 }
@@ -819,7 +819,7 @@ svg {
   border: 0;
 }
 .place-column h2 {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -828,13 +828,13 @@ svg {
   flex-wrap: wrap;
 }
 .place-column h2 span {
-  font-size: 0.56rem;
-  color: #74836a;
+  font-size: 0.67rem;
+  color: #5d6b50;
   font-weight: 400;
 }
 .stock {
-  font-size: 0.68rem;
-  color: #68795e;
+  font-size: 0.8rem;
+  color: #5d6b50;
   margin-top: 6px;
 }
 .stock strong {
@@ -845,8 +845,8 @@ svg {
   font-variant-numeric: tabular-nums;
 }
 .sent-count {
-  font-size: 0.62rem;
-  color: #768269;
+  font-size: 0.69rem;
+  color: #5d6b50;
   margin: 0 0 11px;
   height: 22px;
 }
@@ -864,7 +864,7 @@ svg {
   border-radius: 8px;
   width: 100%;
   min-height: 38px;
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   font-weight: 500;
 }
 .send-button:hover:not(:disabled) {
@@ -889,7 +889,7 @@ svg {
   color: #795d2d;
 }
 .exchange-button {
-  font-size: 0.66rem;
+  font-size: 0.73rem;
   text-decoration: underline;
   text-underline-offset: 4px;
   padding: 11px 1px 0;
@@ -903,8 +903,8 @@ svg {
 }
 .unit-note {
   display: block;
-  font-size: 0.6rem;
-  color: #7c876f;
+  font-size: 0.69rem;
+  color: #5d6b50;
   padding-top: 13px;
 }
 .workbench-footer {
@@ -914,13 +914,13 @@ svg {
   gap: 6px;
   padding: 13px 23px;
   font-size: 0.57rem;
-  color: #78876d;
+  color: #5d6b50;
   background: #edf1e1;
   flex-wrap: wrap;
 }
 .workbench-footer b {
   margin-left: auto;
-  color: #607350;
+  color: #5d6b50;
   font-size: 0.6rem;
   font-weight: 500;
 }
@@ -938,7 +938,7 @@ svg {
   align-items: center;
 }
 .answer-title h2 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 .round-icon {
@@ -969,26 +969,26 @@ svg {
 .math-row > span:first-child {
   font-size: 1.8rem;
   align-self: center;
-  color: #8b957b;
+  color: #5d6b50;
 }
 .math-row.labels {
   font-size: 0.64rem;
-  color: #738569;
+  color: #5d6b50;
   font-weight: 400;
   padding-bottom: 4px;
 }
 .math-row.regrouped {
-  color: #ba7947;
+  color: #986033;
   font-size: 1.2rem;
 }
 .math-row.regrouped > span:first-child {
   font-size: 0.53rem;
-  color: #ba7947;
+  color: #986033;
   white-space: nowrap;
 }
 .math-row.original {
   font-size: 1.05rem;
-  color: #7d856d;
+  color: #5d6b50;
 }
 .math-row.original > span:not(:first-child) {
   text-decoration: line-through;
@@ -996,7 +996,7 @@ svg {
 }
 .answer-panel label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.87rem;
   margin-bottom: 9px;
   color: #6a785d;
 }
@@ -1022,11 +1022,11 @@ svg {
 .answer-input-wrap input::placeholder {
   font-size: 0.88rem;
   font-weight: 400;
-  color: #8b937f;
+  color: #5d6b50;
   letter-spacing: 0.02em;
 }
 .answer-input-wrap > span {
-  font-size: 0.66rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   color: #6b775f;
 }
@@ -1034,7 +1034,7 @@ svg {
   width: 100%;
   margin-top: 18px;
   min-height: 45px;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   padding: 11px 13px;
   gap: 12px;
 }
@@ -1045,9 +1045,9 @@ svg {
   gap: 6px;
   align-items: center;
   justify-content: center;
-  font-size: 0.67rem;
+  font-size: 0.8rem;
   background: none;
-  color: #7b855a;
+  color: #5d6b50;
 }
 .hint-button:hover {
   color: #38573b;
@@ -1067,15 +1067,15 @@ svg {
   flex: 1;
 }
 .companion-name {
-  font-size: 0.7rem;
-  color: #8c7956;
+  font-size: 0.83rem;
+  color: #5d6b50;
   display: flex;
   gap: 8px;
   align-items: center;
   margin-bottom: 5px;
 }
 .companion p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.9;
   color: #5d684e;
   max-width: 900px;
@@ -1151,7 +1151,7 @@ svg {
 }
 .finish-subtitle {
   font-size: 0.82rem;
-  color: #71805f;
+  color: #5d6b50;
 }
 .thank-you {
   display: flex;
@@ -1174,7 +1174,7 @@ svg {
   display: block;
   font-size: 0.69rem;
   font-style: normal;
-  color: #8b947e;
+  color: #5d6b50;
   margin-top: 8px;
 }
 .earned-badge {
@@ -1192,7 +1192,7 @@ svg {
 }
 .earned-badge span {
   font-size: 0.66rem;
-  color: #818c72;
+  color: #5d6b50;
 }
 .earned-badge strong {
   font-size: 0.98rem;
@@ -1205,7 +1205,7 @@ svg {
 }
 .reflection span {
   font-size: 0.73rem;
-  color: #859174;
+  color: #5d6b50;
 }
 .finish-actions {
   display: flex;
@@ -1263,7 +1263,7 @@ svg {
 }
 .info-dialog p {
   font-size: 0.8rem;
-  color: #748163;
+  color: #5d6b50;
   line-height: 1.9;
 }
 .help-steps {
@@ -1284,12 +1284,12 @@ svg {
 .help-steps li span {
   display: block;
   font-size: 0.76rem;
-  color: #7b866b;
+  color: #5d6b50;
   margin-top: 5px;
 }
 .info-dialog .help-note {
   font-size: 0.65rem;
-  color: #7c866f;
+  color: #5d6b50;
   background: #f0f3e6;
   border-radius: 9px;
   padding: 13px;
@@ -1315,7 +1315,7 @@ svg {
   background: #f5f7ef;
   border-radius: 14px;
   padding: 20px 8px;
-  color: #929d82;
+  color: #5d6b50;
 }
 .badge strong {
   font-size: 0.79rem;
@@ -1323,7 +1323,7 @@ svg {
 }
 .badge span {
   font-size: 0.57rem;
-  color: #748263;
+  color: #5d6b50;
 }
 .badge.earned {
   background: #e8efdb;
@@ -1597,10 +1597,10 @@ svg {
     gap: 23px;
   }
   .companion p {
-    font-size: 0.78rem;
+    font-size: 1rem;
   }
   .story {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
   .info-dialog {
     padding: 29px;
@@ -1849,7 +1849,7 @@ svg {
     display: none;
   }
   .story {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 13px;
     margin-bottom: 18px;
   }
@@ -1858,7 +1858,7 @@ svg {
   }
   .workbench-header {
     padding: 15px 15px 0;
-    font-size: 0.72rem;
+    font-size: 0.9rem;
   }
   .workbench-header .text-button {
     font-size: 0.63rem;
@@ -1867,7 +1867,7 @@ svg {
     height: 200px;
   }
   .block-scene-hint {
-    font-size: 0.51rem;
+    font-size: 0.67rem;
     bottom: 0;
   }
   .place-controls {
@@ -1877,22 +1877,22 @@ svg {
     padding-inline: 7px;
   }
   .place-column h2 {
-    font-size: 0.78rem;
+    font-size: 0.95rem;
     gap: 0;
     flex-direction: column;
   }
   .place-column h2 span {
-    font-size: 0.52rem;
+    font-size: 0.67rem;
   }
   .stock {
-    font-size: 0.57rem;
+    font-size: 0.8rem;
   }
   .stock strong {
     font-size: 1.16rem;
     margin-inline: 2px;
   }
   .sent-count {
-    font-size: 0.53rem;
+    font-size: 0.69rem;
     margin-bottom: 6px;
     white-space: nowrap;
   }
@@ -1901,20 +1901,20 @@ svg {
   }
   .send-button {
     min-height: 43px;
-    font-size: 0.62rem;
+    font-size: 0.85rem;
     gap: 4px;
   }
   .send-button svg {
     width: 12px;
   }
   .exchange-button {
-    font-size: 0.56rem;
+    font-size: 0.73rem;
     min-height: 44px;
     padding-top: 6px;
     white-space: nowrap;
   }
   .unit-note {
-    font-size: 0.53rem;
+    font-size: 0.69rem;
     padding-top: 14px;
   }
   .workbench-footer {
@@ -1944,10 +1944,10 @@ svg {
     margin: 11px -9px 0 -10px;
   }
   .companion-name {
-    font-size: 0.62rem;
+    font-size: 0.83rem;
   }
   .companion p {
-    font-size: 0.74rem;
+    font-size: 1rem;
     line-height: 1.85;
   }
   .finish {
@@ -2014,4 +2014,27 @@ svg {
   button:hover {
     transform: none !important;
   }
+}
+
+.site-credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 20px;
+  border-top: 1px solid #e0e6d5;
+  font-size: 0.72rem;
+  color: #606e53;
+}
+.site-credits a {
+  color: #49613a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.seo-fallback {
+  max-width: 880px;
+  margin: 50px auto;
+  padding: 25px;
+  line-height: 1.9;
 }

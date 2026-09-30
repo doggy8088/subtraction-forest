@@ -401,10 +401,7 @@ export default function ForestScene({
       if (!width || !height) return;
       renderer.setSize(width, height);
       const aspect = width / height;
-      const halfWidth =
-        mode === 'forest'
-          ? Math.max(7.9, 6 * aspect)
-          : Math.max(6.4, 3.4 * aspect);
+      const halfWidth = mode === 'forest' ? Math.max(7.9, 6 * aspect) : 6.4;
       camera.left = -halfWidth;
       camera.right = halfWidth;
       camera.top = halfWidth / aspect;
