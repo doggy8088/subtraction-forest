@@ -4,14 +4,14 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "node scripts/build.mjs",
-    "preview": "vite preview --host 127.0.0.1",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "check:site": "node scripts/check-site.mjs"
+    "dev": "bun --hot scripts/serve.ts",
+    "build": "bun run typecheck && bun scripts/build.ts",
+    "preview": "bun scripts/serve.ts --preview",
+    "test": "bun test",
+    "typecheck": "bun node_modules/typescript/bin/tsc --noEmit",
+    "format": "bunx --bun prettier --write .",
+    "format:check": "bunx --bun prettier --check .",
+    "check:site": "bun scripts/check-site.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -20,17 +20,16 @@
     "three": "^0.186.0"
   },
   "devDependencies": {
+    "@types/bun": "1.3.13",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@types/three": "^0.186.0",
-    "@vitejs/plugin-react": "^5.1.1",
     "axe-core": "^4.13.0",
     "prettier": "^3.9.9",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.2",
-    "vitest": "^4.1.0"
+    "typescript": "^5.9.3"
   },
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  }
+    "bun": ">=1.3.13"
+  },
+  "packageManager": "bun@1.3.13"
 }

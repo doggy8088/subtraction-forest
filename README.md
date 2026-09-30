@@ -35,25 +35,25 @@
 
 ## 本機開發
 
-建議 Node.js 22.12 以上及 npm。也支援 Node.js 20.19 以上的 20.x。
+使用 **Bun 1.3.13 以上**；CI 固定使用 1.3.13。Bun 負責安裝、開發伺服器、測試與正式打包。
 
 ```bash
 git clone https://github.com/doggy8088/subtraction-forest.git
 cd subtraction-forest
-npm ci
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
 
-開啟終端機顯示的本機網址。
+開啟終端機顯示的本機網址，預設為 `http://127.0.0.1:5173`。可用 `PORT=5176 bun run dev` 指定連接埠。
 
 ```bash
-npm test              # 數學邏輯、2,000 道樣本守恆檢查、儲存容錯
-npm run typecheck     # TypeScript 型別檢查
-npm run format:check  # 原始碼格式檢查
-npm run build         # 正式建置；建置警告也會使指令失敗
-npm run check:site    # 檢查 dist 的 SEO、JSON-LD、圖示與靜態資源
-npm run preview      # 預覽正式建置
-npm run format       # 統一程式碼格式
+bun test              # 數學邏輯、2,000 道樣本守恆檢查、儲存容錯
+bun run typecheck     # TypeScript 型別檢查
+bun run format:check  # 原始碼格式檢查
+bun run build         # 正式建置；建置警告也會使指令失敗
+bun run check:site    # 檢查 dist 的 SEO、JSON-LD、圖示與靜態資源
+bun run preview      # 預覽正式建置
+bun run format       # 統一程式碼格式
 ```
 
 ## 專案結構
@@ -71,18 +71,18 @@ src/
   style.css                 響應式介面
 public/                     分享卡、圖示、manifest、robots、sitemap、CNAME
 design/                     可重製的分享卡與圖示設計稿
-scripts/                    正式建置與靜態網站檢查
+scripts/                    Bun 伺服器、正式建置與靜態網站檢查
 .github/workflows/          CI 與 GitHub Pages 部署
 ```
 
-技術：React、TypeScript、Three.js、Vite、Vitest、Phosphor Icons。森林與積木由程式即時繪製，不依賴外部模型或字體服務。
+技術：React、TypeScript、Three.js、Bun、Phosphor Icons。森林與積木由程式即時繪製，不依賴外部模型或字體服務。
 
 ## SEO 與靜態發佈
 
 - HTML 直接包含教學介紹，JavaScript 載入後切換成互動遊戲。
 - canonical、OpenGraph、Twitter Card、JSON-LD、robots.txt 與 sitemap.xml 統一使用正式網域。
 - 分享卡為 1200 × 630 PNG；提供 SVG、ICO、PNG favicon、Apple 圖示與安裝 manifest。
-- `design/social-card.html` 可透過 Vite 開啟，以 1200 × 630 瀏覽器視窗重新輸出分享卡；`design/icon.html` 提供圖示來源。
+- `design/social-card.html` 可透過 Bun 開發伺服器開啟，以 1200 × 630 瀏覽器視窗重新輸出分享卡；`design/icon.html` 提供圖示來源。
 - 網站僅有一個公開入口；遊戲內狀態不是獨立網址，不放進 sitemap。
 - SEO 資訊不代表搜尋引擎已收錄或保證排名。
 

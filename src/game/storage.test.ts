@@ -1,11 +1,26 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, mock } from 'bun:test';
+
+const originalStorage = Object.getOwnPropertyDescriptor(
+  globalThis,
+  'localStorage',
+);
+function stubStorage(value: unknown) {
+  Object.defineProperty(globalThis, 'localStorage', {
+    value,
+    configurable: true,
+  });
+}
 import { readProgress, saveProgress } from './storage';
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  if (originalStorage)
+    Object.defineProperty(globalThis, 'localStorage', originalStorage);
+  else Reflect.deleteProperty(globalThis, 'localStorage');
+});
 
 describe('local progress', () => {
   it('validates and deduplicates saved chapters', () => {
-    vi.stubGlobal('localStorage', {
+    stubStorage({
       getItem: () =>
         JSON.stringify({ completed: [0, 0, 3, 5, -1, '1', null], sound: true }),
     });
@@ -14,12 +29,12 @@ describe('local progress', () => {
   it.each(['broken JSON', 'null', '{}', '[]'])(
     'recovers from invalid data: %s',
     (data) => {
-      vi.stubGlobal('localStorage', { getItem: () => data });
+      stubStorage({ getItem: () => data });
       expect(readProgress()).toEqual({ completed: [], sound: false });
     },
   );
   it('keeps gameplay available when storage is blocked', () => {
-    vi.stubGlobal('localStorage', {
+    stubStorage({
       getItem() {
         throw new Error('Access denied');
       },
@@ -31,8 +46,8 @@ describe('local progress', () => {
     expect(saveProgress({ completed: [1], sound: false })).toBe(false);
   });
   it('writes a versioned record', () => {
-    const setItem = vi.fn();
-    vi.stubGlobal('localStorage', { setItem });
+    const setItem = mock();
+    stubStorage({ setItem });
     const progress = { completed: [0, 1], sound: true };
     expect(saveProgress(progress)).toBe(true);
     expect(setItem).toHaveBeenCalledWith(
