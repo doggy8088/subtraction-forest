@@ -5,6 +5,13 @@ export default defineConfig({
   plugins: [react()],
   base: './',
   build: {
-    rollupOptions: { output: { manualChunks: { three: ['three'] } } },
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('/three/build/three.core.js')) return 'three-core';
+          if (id.includes('/three/build/three.module.js')) return 'three-webgl';
+        },
+      },
+    },
   },
 });

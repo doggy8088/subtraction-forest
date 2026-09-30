@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subtraction-forest.gh.miniasp.com/sitemap.xml

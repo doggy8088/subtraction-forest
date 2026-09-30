@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "暖暖森林：三位數減法冒險",
+  "short_name": "暖暖森林",
+  "description": "給國小三年級的 3D 三位數減法教學遊戲。",
+  "lang": "zh-Hant",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#3b634c",
+  "background_color": "#fafbf5",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
