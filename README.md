@@ -68,6 +68,15 @@ make clean        # 移除 dist/
 
 `make lighthouse` 固定使用 Lighthouse 13.5.0，依序執行預設手機測試與桌面測試，將 HTML 與 JSON 報告寫入 `artifacts/lighthouse/`（不納入版控）。可用 `make lighthouse URL=https://example.com/` 更換受測網址。效能目標為 100 分；請以正式站的壓縮傳輸條件驗收，本機預覽的未壓縮資源會影響模擬網速下的分數。
 
+2026-09-30 正式站實測（Lighthouse 13.5.0，Chrome headless，預設手機節流與 desktop preset）：
+
+| 裝置 | 效能（優化前 → 後） | 無障礙 | 最佳做法 | SEO | CLS（優化前 → 後） |
+| ---- | ------------------- | ------ | -------- | --- | ------------------ |
+| 手機 | 71 → **100**        | 100    | 100      | 100 | 1.0 → **0**        |
+| 桌面 | 81 → **100**        | 100    | 100      | 100 | 0.417 → **0**      |
+
+分數是上述環境的單次實測；網路與執行裝置會影響後續測量。
+
 沒有安裝 Make 時，可直接使用 Bun 指令：
 
 ```bash
@@ -114,6 +123,8 @@ Makefile                    常用開發、測試與檢查指令
 - SEO 資訊不代表搜尋引擎已收錄或保證排名。
 
 推送 `main` 後，GitHub Actions 依序安裝依賴、檢查格式、測試、建置和檢查靜態資源，再把 `dist/` 部署到 GitHub Pages。PR 執行相同驗證，但不部署。
+
+部署透過 `actions/github-script@v9` 與 GitHub Pages API，直接使用驗證工作上傳的 artifact ID 與 OIDC 身分憑證，並等待發布成功。這避開 `actions/deploy-pages@v5` 的舊 artifact 相依套件所產生的 [DEP0040 警告](https://github.com/actions/deploy-pages/issues/434)，不關閉執行期警告；部署失敗或逾時仍會使 CI 失敗。
 
 正式網址：**https://subtraction-forest.gh.miniasp.com/**
 

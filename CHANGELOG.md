@@ -4,6 +4,8 @@
 
 ## 尚未發佈
 
+- 改用 GitHub Pages API 搭配目前的 GitHub SDK 部署，移除舊 artifact client 的棄用警告；加入成功、失敗與逾時取消部署測試。
+- 正式網域 Lighthouse 13.5.0 實測：手機效能 71 → 100、桌面 81 → 100，無障礙、最佳做法與 SEO 皆為 100。
 - 預先產生完整首頁並使用 hydration，消除初始版面位移；內嵌共用 CSS，縮短首次顯示的載入路徑。
 - 保護 hydration 期間的紀念冊與音效設定，確認讀取既有資料後才寫回。
 - 加入 `make lighthouse`，使用固定版本測量手機與桌面，保留可檢查的 HTML 與 JSON 報告。
