@@ -46,6 +46,27 @@ bun run dev
 
 開啟終端機顯示的本機網址，預設為 `http://127.0.0.1:5173`。可用 `PORT=5176 bun run dev` 指定連接埠。
 
+也可以使用 Makefile；直接執行 `make` 或 `make help` 會列出所有指令：
+
+```bash
+make install      # 依照 bun.lock 安裝依賴
+make dev          # 開發伺服器，預設連接埠 5173
+make test         # 執行所有測試
+make test-watch   # 監看檔案並重新執行測試
+make typecheck    # TypeScript 型別檢查
+make format       # 格式化原始碼與文件
+make format-check # 檢查格式，不修改檔案
+make build        # 型別檢查並建置到 dist/
+make check-site   # 建置後檢查 SEO、圖示與靜態資源
+make check        # 執行與 CI 相同的格式、測試、型別、建置與網站檢查
+make preview      # 建置後預覽正式版本，預設連接埠 4173
+make clean        # 移除 dist/
+```
+
+自訂連接埠：`make dev PORT=5176` 或 `make preview PORT=4176`。`make check` 會先完成建置，再檢查產出的靜態網站；也支援 `make -j4 check`。請先執行 `make install` 安裝依賴。
+
+沒有安裝 Make 時，可直接使用 Bun 指令：
+
 ```bash
 bun test              # 數學邏輯、2,000 道樣本守恆檢查、儲存容錯
 bun run typecheck     # TypeScript 型別檢查
@@ -72,6 +93,7 @@ src/
 public/                     分享卡、圖示、manifest、robots、sitemap、CNAME
 design/                     可重製的分享卡與圖示設計稿
 scripts/                    Bun 伺服器、正式建置與靜態網站檢查
+Makefile                    常用開發、測試與檢查指令
 .github/workflows/          CI 與 GitHub Pages 部署
 ```
 
